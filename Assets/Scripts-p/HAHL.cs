@@ -9,7 +9,7 @@ using System.Diagnostics;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class actualWalkTwoOrig : MonoBehaviour
+public class HAHL : MonoBehaviour
 {
     float timeLeft;
     int[,] densityWidth;
@@ -38,6 +38,8 @@ public class actualWalkTwoOrig : MonoBehaviour
     StringBuilder sb;
     string localDateTime;
     Stopwatch stopwatch;
+    Stopwatch totalStopwatch;
+
 
     int setCompleted;
     int currentDensity;
@@ -47,12 +49,15 @@ public class actualWalkTwoOrig : MonoBehaviour
 
     string objectSideStr;
     string handUsedStr;
-
+    public static bool startTotalStopwatch;
+    public bool started;
+    public bool showInfo;
 
 
     void Start()
     {
-
+        started = false;
+        showInfo = false;
         correctAudioData = GameObject.Find("correctAudio").GetComponent<AudioSource>();
 
         errorAudioData = GameObject.Find("errorAudio").GetComponent<AudioSource>();
@@ -63,6 +68,8 @@ public class actualWalkTwoOrig : MonoBehaviour
         completionTime = 0;
         errorCount = 0;
         stopwatch = new Stopwatch();
+ 
+        totalStopwatch = new Stopwatch();
         Directory.CreateDirectory("./file");
         filePath = "./file/" + "actualtWalkTwo" + localDateTime + ".csv";
         outStream = System.IO.File.CreateText(filePath);
@@ -115,19 +122,44 @@ public class actualWalkTwoOrig : MonoBehaviour
         switch (input)
         {
             case "c":
-                SceneManager.LoadScene("c3C-v2-actualWalkOne");
+                GameObject.Find("InfoParent").transform.GetChild(0).gameObject.SetActive(true);
+                GameObject g = GameObject.Find("Info");
+                Vector3 pos = GameObject.Find("HeadsetAlias").GetComponent<Transform>().position;
+                g.transform.position = new Vector3(pos.x, pos.y, pos.z+5);
+                showInfo = true;
                 break;
             case "v":
-                SceneManager.LoadScene("c4V-v2-actualWalkTwo");
+                GameObject.Find("InfoParent").transform.GetChild(0).gameObject.SetActive(false);
+                showInfo = false;
+               break;
+            case "x":
+                SceneManager.LoadScene("1-menuitems");
                 break;
         }
 
         if (numPresent == 0)
         {
             setCompleted++;
-            completionTime = stopwatch.ElapsedMilliseconds; ;
+            completionTime = stopwatch.ElapsedMilliseconds;
             file();
             generateRandom();
+            totalStopwatch.Stop();
+        }
+
+        startTotalStopwatch = both.startTotalStopwatch;
+
+        if (startTotalStopwatch)
+        {
+            totalStopwatch.Start();
+            both.startTotalStopwatch = false;
+            started = true;
+        }
+
+        if (showInfo && started && numPresent != null && currentDensity != null)
+        {
+            //GameObject.Find("InfoText").GetComponent<TextMesh>().text = "x";
+            float cPos = GameObject.Find("HeadsetAlias").GetComponent<Transform>().position.z;
+            GameObject.Find("InfoText").GetComponent<TextMesh>().text = " Time passed: " + (totalStopwatch.ElapsedMilliseconds/1000).ToString() + "\n Number of objects to be selected: " + (numPresent).ToString() + "\n Number of selected objects: " + (currentDensity - numPresent).ToString() + "\n Distance Left to walk: " + (20-cPos).ToString() + "\n Distance travelled: " + (cPos).ToString();
         }
     }
 

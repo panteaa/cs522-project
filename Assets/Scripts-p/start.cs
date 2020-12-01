@@ -9,10 +9,8 @@ using System.Diagnostics;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class both : MonoBehaviour
+public class start : MonoBehaviour
 {
-
-    public static bool startTotalStopwatch;
 
     void Start()
     {
@@ -31,26 +29,9 @@ public class both : MonoBehaviour
         {
             g = data.CollisionData.transform.gameObject;
             n = g.name;
-            if (String.Equals(n, "EAEL"))
+            if (String.Equals(n, "Start"))
             {
-                SceneManager.LoadScene("EAEL");
-            }
-            else if (String.Equals(n, "EAHL"))
-            {
-                SceneManager.LoadScene("EAHL");
-            }
-            else if (String.Equals(n, "HAEL"))
-            {
-                SceneManager.LoadScene("HAEL");
-            }
-            else if (String.Equals(n, "HAHL"))
-            {
-                startTotalStopwatch = true;
-                SceneManager.LoadScene("HAHL"); // done
-            }
-            else if (String.Equals(n, "Back"))
-            {
-                SceneManager.LoadScene("2-bodypartsMenu");
+                SceneManager.LoadScene("1-menuitems");
             }
         }
     }

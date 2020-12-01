@@ -9,7 +9,7 @@ using System.Diagnostics;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class actualWalkOne : MonoBehaviour
+public class menu : MonoBehaviour
 {
 
     void Start()
