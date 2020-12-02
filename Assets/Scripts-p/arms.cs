@@ -31,11 +31,11 @@ public class arms : MonoBehaviour
             n = g.name;
             if (String.Equals(n, "Easy"))
             {
-                SceneManager.LoadScene("easyarm");
+                SceneManager.LoadScene("easyArm");
             }
             else if (String.Equals(n, "Hard"))
             {
-                SceneManager.LoadScene("hardarm");
+                SceneManager.LoadScene("hardArm");
             }
             else if (String.Equals(n, "Back"))
             {

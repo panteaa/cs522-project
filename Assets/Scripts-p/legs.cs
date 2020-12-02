@@ -31,7 +31,7 @@ public class legs : MonoBehaviour
             n = g.name;
             if (String.Equals(n, "Easy"))
             {
-                SceneManager.LoadScene("easyleg");
+                SceneManager.LoadScene("easyLeg");
             }
             else if (String.Equals(n, "Hard"))
             {
