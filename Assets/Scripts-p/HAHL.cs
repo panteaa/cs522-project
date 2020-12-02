@@ -95,9 +95,9 @@ public class HAHL : MonoBehaviour
 
         cube = GameObject.Find("object-sample");
         targets = new List<Vector3>();
-        densities = new int[2] { 10, 20 };
-        densities = new int[2] { 20, 30 };
-        widths = new int[3] { 1, 2, 3 };
+        //densities = new int[2] { 10, 20 };
+        densities = new int[2] { 30, 30 };
+        widths = new int[3] { 3, 3, 3 };
 
         //rb = new Vector3(1, 0, (float)-0);
         //rt = new Vector3(1, 0, (float)6);
