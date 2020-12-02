@@ -33,6 +33,18 @@ public class menu : MonoBehaviour
             {
                 SceneManager.LoadScene("2-bodypartsMenu");
             }
+            if (String.Equals(n, "Tutorial"))
+            {
+                SceneManager.LoadScene("tutorial1");
+            }
+            if (String.Equals(n, "Records"))
+            {
+                SceneManager.LoadScene("records");
+            }
+            if (String.Equals(n, "Setting"))
+            {
+                SceneManager.LoadScene("setting");
+            }
         }
     }
 

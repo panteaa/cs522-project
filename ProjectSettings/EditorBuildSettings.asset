@@ -50,4 +50,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes-p/hardLeg.unity
     guid: 3b5d84dba1854f04899c0013a10f468c
+  - enabled: 1
+    path: Assets/Scenes-p/tutorial1.unity
+    guid: 72ca05b1a4ccfcf4a87d60b9c4920b48
+  - enabled: 1
+    path: Assets/Scenes-p/tutorial2.unity
+    guid: 8585c2ee9c7589a4086e68540605af97
+  - enabled: 1
+    path: Assets/Scenes-p/tutorial3.unity
+    guid: 552223dda6e6eab4c9fe0b76e8d35788
+  - enabled: 1
+    path: Assets/Scenes-p/tutorial4.unity
+    guid: c9d362dd9a3c07b4a90f55c12a7cc7a2
+  - enabled: 1
+    path: Assets/Scenes-p/tutorial5.unity
+    guid: 4d4fe664d73c58041abc9a003c467345
+  - enabled: 1
+    path: Assets/Scenes-p/tutorial6.unity
+    guid: b83ce695d36c1d349af0ad2d6a5315fd
+  - enabled: 1
+    path: Assets/Scenes-p/tutorial7.unity
+    guid: 4af643c6a61a45d40ab186170f870760
   m_configObjects: {}
