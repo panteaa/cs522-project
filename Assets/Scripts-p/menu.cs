@@ -39,7 +39,7 @@ public class menu : MonoBehaviour
             }
             if (String.Equals(n, "Records"))
             {
-                SceneManager.LoadScene("records");
+                SceneManager.LoadScene("records1");
             }
             if (String.Equals(n, "Setting"))
             {
