@@ -44,4 +44,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes-p/5-bothMenu.unity
     guid: b4edc70152a5e704899841991de5d8f9
+  - enabled: 1
+    path: Assets/Scenes-p/easyArm.unity
+    guid: bd8d66c65754ec14cbf6b5dbed340c3f
+  - enabled: 1
+    path: Assets/Scenes-p/hardLeg.unity
+    guid: 3b5d84dba1854f04899c0013a10f468c
   m_configObjects: {}

@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class legs : MonoBehaviour
 {
+    public static bool startLegStopwatch;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class legs : MonoBehaviour
             }
             else if (String.Equals(n, "Hard"))
             {
+                startLegStopwatch = true;
                 SceneManager.LoadScene("hardLeg");
             }
             else if (String.Equals(n, "Back"))

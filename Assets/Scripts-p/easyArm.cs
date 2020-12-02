@@ -95,7 +95,7 @@ public class easyArm : MonoBehaviour
 
         cube = GameObject.Find("object-sample");
         targets = new List<Vector3>();
-        densities = new int[2] { 10, 20 };
+       // densities = new int[2] { 10, 20 };
         densities = new int[2] { 20, 30 };
         widths = new int[3] { 1, 2, 3 };
 
@@ -106,8 +106,8 @@ public class easyArm : MonoBehaviour
 
 
         rb = new Vector3(1, 0, (float)-0);
-        rt = new Vector3(1, 0, (float)12);
-        lt = new Vector3(-1, 0, (float)12);
+        rt = new Vector3(1, 0, (float)2);
+        lt = new Vector3(-1, 0, (float)2);
         lb = new Vector3(-1, 0, (float)-0);
 
         rand = new System.Random();
@@ -146,12 +146,12 @@ public class easyArm : MonoBehaviour
             totalStopwatch.Stop();
         }
 
-        startTotalStopwatch = both.startTotalStopwatch;
+        startTotalStopwatch = arms.startTotalStopwatch;
 
         if (startTotalStopwatch)
         {
             totalStopwatch.Start();
-            both.startTotalStopwatch = false;
+            arms.startTotalStopwatch = false;
             started = true;
         }
 
@@ -159,7 +159,9 @@ public class easyArm : MonoBehaviour
         {
             //GameObject.Find("InfoText").GetComponent<TextMesh>().text = "x";
             float cPos = GameObject.Find("HeadsetAlias").GetComponent<Transform>().position.z;
-            GameObject.Find("InfoText").GetComponent<TextMesh>().text = " Time passed: " + (totalStopwatch.ElapsedMilliseconds / 1000).ToString() + "\n Number of objects to be selected: " + (numPresent).ToString() + "\n Number of selected objects: " + (currentDensity - numPresent).ToString() + "\n Distance Left to walk: " + (20 - cPos).ToString() + "\n Distance travelled: " + (cPos).ToString();
+         //   GameObject.Find("InfoText").GetComponent<TextMesh>().text = " Time passed: " + (totalStopwatch.ElapsedMilliseconds / 1000).ToString() + "\n Number of objects to be selected: " + (numPresent).ToString() + "\n Number of selected objects: " + (currentDensity - numPresent).ToString() + "\n Distance Left to walk: " + (20 - cPos).ToString() + "\n Distance travelled: " + (cPos).ToString();
+            GameObject.Find("InfoText").GetComponent<TextMesh>().text = " Time passed: " + (totalStopwatch.ElapsedMilliseconds / 1000).ToString() + "\n Number of objects to be selected: " + (numPresent).ToString() + "\n Number of selected objects: " + (currentDensity - numPresent).ToString();
+
         }
     }
 

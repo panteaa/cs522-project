@@ -38,7 +38,7 @@ public class hardLeg : MonoBehaviour
     StringBuilder sb;
     string localDateTime;
     Stopwatch stopwatch;
-    Stopwatch totalStopwatch;
+    Stopwatch legStopwatch;
 
 
     int setCompleted;
@@ -49,7 +49,7 @@ public class hardLeg : MonoBehaviour
 
     string objectSideStr;
     string handUsedStr;
-    public static bool startTotalStopwatch;
+    public static bool startLegStopwatch;
     public bool started;
     public bool showInfo;
 
@@ -69,7 +69,7 @@ public class hardLeg : MonoBehaviour
         errorCount = 0;
         stopwatch = new Stopwatch();
 
-        totalStopwatch = new Stopwatch();
+        legStopwatch = new Stopwatch();
         Directory.CreateDirectory("./file");
         filePath = "./file/" + "actualtWalkTwo" + localDateTime + ".csv";
         outStream = System.IO.File.CreateText(filePath);
@@ -112,7 +112,7 @@ public class hardLeg : MonoBehaviour
 
         rand = new System.Random();
 
-        generateRandom();
+       // generateRandom();
     }
 
 
@@ -142,24 +142,25 @@ public class hardLeg : MonoBehaviour
             setCompleted++;
             completionTime = stopwatch.ElapsedMilliseconds;
             file();
-            generateRandom();
-            totalStopwatch.Stop();
+   //         generateRandom();
+       //     legStopwatch.Stop();
         }
 
-        startTotalStopwatch = both.startTotalStopwatch;
+        startLegStopwatch = legs.startLegStopwatch;
 
-        if (startTotalStopwatch)
+        if (startLegStopwatch)
         {
-            totalStopwatch.Start();
-            both.startTotalStopwatch = false;
+            legStopwatch.Start();
+            legs.startLegStopwatch = false;
             started = true;
         }
 
-        if (showInfo && started && numPresent != null && currentDensity != null)
+        if (showInfo && started)
         {
             //GameObject.Find("InfoText").GetComponent<TextMesh>().text = "x";
             float cPos = GameObject.Find("HeadsetAlias").GetComponent<Transform>().position.z;
-            GameObject.Find("InfoText").GetComponent<TextMesh>().text = " Time passed: " + (totalStopwatch.ElapsedMilliseconds / 1000).ToString() + "\n Number of objects to be selected: " + (numPresent).ToString() + "\n Number of selected objects: " + (currentDensity - numPresent).ToString() + "\n Distance Left to walk: " + (20 - cPos).ToString() + "\n Distance travelled: " + (cPos).ToString();
+            //  GameObject.Find("InfoText").GetComponent<TextMesh>().text = " Time passed: " + (totalStopwatch.ElapsedMilliseconds / 1000).ToString() + "\n Number of objects to be selected: " + (numPresent).ToString() + "\n Number of selected objects: " + (currentDensity - numPresent).ToString() + "\n Distance Left to walk: " + (20 - cPos).ToString() + "\n Distance travelled: " + (cPos).ToString();
+            GameObject.Find("InfoText").GetComponent<TextMesh>().text = " Time passed: " + (legStopwatch.ElapsedMilliseconds / 1000).ToString() + "\n Distance Left to walk: " + (30 - cPos).ToString() + "\n Distance travelled: " + (cPos).ToString();
         }
     }
 

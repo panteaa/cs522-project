@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class arms : MonoBehaviour
 {
+    public static bool startTotalStopwatch;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class arms : MonoBehaviour
             n = g.name;
             if (String.Equals(n, "Easy"))
             {
+                startTotalStopwatch = true;
                 SceneManager.LoadScene("easyArm");
             }
             else if (String.Equals(n, "Hard"))
