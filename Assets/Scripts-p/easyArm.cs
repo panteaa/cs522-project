@@ -302,7 +302,7 @@ public class easyArm : MonoBehaviour
 
             GameObject go = Instantiate(cube, newCube, Quaternion.identity);
             go.transform.localScale = new Vector3((float)(widths[j] * 0.1), (float)(widths[j] * 0.1), (float)(widths[j] * 0.1));
-            //go.GetComponent<Renderer>().material.color = new Color((float)rand.NextDouble(), (float)rand.NextDouble(), (float)rand.NextDouble());
+            go.GetComponent<Renderer>().material.color = new Color((float)rand.NextDouble(), (float)rand.NextDouble(), (float)rand.NextDouble());
             targets.Add(newCube);
 
         }
@@ -324,7 +324,7 @@ public class easyArm : MonoBehaviour
 
             GameObject go = Instantiate(cube, newCube, Quaternion.identity);
             go.transform.localScale = new Vector3((float)(widths[j] * 0.1), (float)(widths[j] * 0.1), (float)(widths[j] * 0.1));
-            //go.GetComponent<Renderer>().material.color = new Color((float)rand.NextDouble(), (float)rand.NextDouble(), (float)rand.NextDouble());
+            go.GetComponent<Renderer>().material.color = new Color((float)rand.NextDouble(), (float)rand.NextDouble(), (float)rand.NextDouble());
             targets.Add(newCube);
         }
 
