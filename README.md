@@ -11,6 +11,11 @@
 * Depending on the device you are using choose simulator or headet
 * Follow the instruction bellow based on the platform you are using to see and use the application 
 
+note: for condition and difficulty you can only choose one of these: 
+ * hard leg and hard arm
+ * easy arm only
+ * hard leg only
+
 ## Instructions on how to use 
 ### Vive Headset -- Controller Inputs
 #### Selecting
